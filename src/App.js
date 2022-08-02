@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import Card from './components/card';
+
+let lista = [
+  {
+    url: "http://www.hq-now.com/hq/5/batman",
+    texto: "Batman: Os Novos 52"
+  },
+  {
+    url: "http://www.hq-now.com/hq/1372/batman-ano-um-ra-s-al-ghul",
+    texto: "Batman: Ano Um"
+  },
+  {
+    url: "http://www.hq-now.com/hq/3138/superman-e-robin-especial-2022",
+    texto: "Superman e Robin"
+  }
+]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Listas de quadrinhos para ler</h1>
+      {lista.map((elem) => {
+        return (
+          <Card url={elem.url} texto={elem.texto}></Card>
+        )
+
+      })
+
+      }
+    </>
   );
 }
 
